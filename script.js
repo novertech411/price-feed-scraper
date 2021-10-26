@@ -24,24 +24,25 @@ async function getPriceFeed() {
             'volume',
             'circulatingSupply'
 
-
         ]
         
         $(elemSelector).each((parentIdx, parentElem) =>  {
             let KeyIdx = 0;
+            const coinObj = {};
+
              if (parentIdx <= 9) {
                  $(parentElem).children().each((childIdx, childElem) =>{
                      const tdValue = $(childElem).text()
 
                      if (tdValue){
-                       console.log(Keys[KeyIdx])
+                       coinObj(Keys[KeyIdx]) = tdValue 
 
                        KeyIdx++
                      }
                  })
              }
-        });
-
+             console.log(coinObj)
+        });   
 
     } catch (err) {
     console.error(err)
